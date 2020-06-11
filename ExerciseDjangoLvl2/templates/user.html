@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data User</title>
+    <link rel="stylesheet" href="{% static "css/mystyle.css" %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="title text-center">
+            <h1>List Data User</h1>
+        </div>
+        
+        <div class="dataUser">
+            {% if firstName %}
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Address</th>
+                    </tr>
+                </thead>
+        
+                <tbody>
+                    {% for i in firstName %}
+                    <tr>
+                        <td>{{ i.firstName }}</td>
+                        <td>{{ i.lastName }}</td>
+                        <td>{{ i.email }}</td>
+                        <td>{{ i.address }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <p>No Access Data User!</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
